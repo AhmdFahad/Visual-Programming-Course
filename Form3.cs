@@ -10,40 +10,29 @@ using System.Windows.Forms;
 
 namespace Ahemd_Fahad_Aub_hamdaha_Project
 {
-
-    public partial class Form2 : Form
+    public partial class Form3 : Form
     {
-        public string LibName { get; set; } = "Test";
-
-        public Form2()
+        public Form3()
         {
             InitializeComponent();
         }
-
-        private static Form2 inst;
-        public static Form2 GetForm
+        public static string name;
+        public static int num;
+        private void Form3_Load(object sender, EventArgs e)
         {
-            get
-            {
-                if (inst == null || inst.IsDisposed)
-                    inst = new Form2();
-                return inst;
-            }
+            for(int i = 0; i < Form1.n; i++)
+                listBox1.Items.Add(i);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            inst.LibName= textBox1.Text;
-            this.Close();
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            name = textBox1.Text;
+            num = listBox1.SelectedIndex;
             Close();
         }
     }
