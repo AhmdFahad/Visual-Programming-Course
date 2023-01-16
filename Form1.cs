@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
             InitializeComponent();
         }
 
-        public static int n = 0;
+        public static int numberLibrary = 0;
+        public static string[] arr;
 
 
         private void projectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,7 +45,7 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-        
+            panel1.Hide();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,9 +76,10 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
         {
             try {
                 a = listView1.SelectedIndices[0];
-                MessageBox.Show("You select the "+a+" library ");
+               //MessageBox.Show("You select the "+a+" library ");
             }
-            catch{ }
+            catch{
+            }
                 checkedListBox1.Items.Clear();
             foreach (ListViewItem item in listView1.SelectedItems) {
                 for(int i =1;i<item.SubItems.Count;i++) {
@@ -113,11 +116,31 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
 
         private void addBookToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            n = listView1.Items.Count;
-            Form3 f = new Form3();
-            f.ShowDialog();
-            listView1.Items[Form3.num].SubItems.Add(Form3.name);
+            try
+            {
+                numberLibrary = listView1.Items.Count;
+                arr = new string[numberLibrary];
+                for (int i = 0; i < numberLibrary; i++)
+                {
+                    arr[i] = listView1.Items[i].Text;
+                }
+                Form3 f = new Form3();
+                f.ShowDialog();
+                listView1.Items[Form3.num].SubItems.Add(Form3.name);
+            }
+            catch {
+                MessageBox.Show("choose library");
+            }
 
+            checkedListBox1.Items.Clear();
+            foreach (ListViewItem item in listView1.SelectedItems)
+            {
+                for (int i = 1; i < item.SubItems.Count; i++)
+                {
+                    checkedListBox1.Items.Add(item.SubItems[i].Text);
+                }
+
+            }
         }
 
         private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -135,7 +158,61 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
 
         }
 
+        private void checkedListBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            panel1.Show();
+        }
 
+        private void saveToFile(ListView lv)
+        {
+            string filename = "";
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.Title = "SaveFileDialog Export2File";
+            sfd.Filter = "Text File (.txt) | *.txt";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                filename = sfd.FileName.ToString();
+                if (filename != "")
+                {
+                    using (StreamWriter sw = new StreamWriter(filename))
+                    {
+                        
+                        foreach (ListViewItem item in lv.Items)
+                        {
+                            for (int i = 1; i < item.SubItems.Count; i++) {
+                                sw.Write("{0}{1}{2}", item.SubItems[0].Text, " : ", item.SubItems[i].Text+" ");
+                            }
+                            sw.WriteLine(" ,");
+                        }
+
+                    }
+                }
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            listView1.Items[a].SubItems.RemoveAt(checkedListBox1.SelectedIndex+1);
+            panel1.Hide();
+
+
+            checkedListBox1.Items.Clear();
+            foreach (ListViewItem item in listView1.SelectedItems)
+            {
+                for (int i = 1; i < item.SubItems.Count; i++)
+                {
+                    checkedListBox1.Items.Add(item.SubItems[i].Text);
+                }
+
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            saveToFile(listView1);
+        }
     }
     }
 

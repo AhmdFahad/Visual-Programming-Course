@@ -20,8 +20,11 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
         public static int num;
         private void Form3_Load(object sender, EventArgs e)
         {
-            for(int i = 0; i < Form1.n; i++)
-                listBox1.Items.Add(i);
+            for(int i = 0; i < Form1.numberLibrary; i++)
+                listBox1.Items.Add(Form1.arr[i]);
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,6 +37,11 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
             name = textBox1.Text;
             num = listBox1.SelectedIndex;
             Close();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
