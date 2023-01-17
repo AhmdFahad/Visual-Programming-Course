@@ -238,6 +238,11 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
 
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
+        }
     }
     }
 
