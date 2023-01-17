@@ -213,6 +213,31 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
         {
             saveToFile(listView1);
         }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripTextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            string Name = toolStripTextBox1.Text;
+            if (e.KeyCode == Keys.Enter)
+            {
+                foreach (ListViewItem item in listView1.Items) {
+                    for (int i = 1; i < item.SubItems.Count; i++) {
+                        if (item.SubItems[i].Text == Name)
+                        {
+                            MessageBox.Show("Found n Library : " + item.Text+" is "+ i +"in the lsit");
+                            return;
+                        }
+                    }
+                
+                }
+                MessageBox.Show("not Found");
+
+            }
+        }
     }
     }
 
