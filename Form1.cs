@@ -124,7 +124,7 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
                 {
                     arr[i] = listView1.Items[i].Text;
                 }
-                Form3 f = new Form3();
+                Form3 f = Form3.GetForm;
                 f.ShowDialog();
                 listView1.Items[Form3.num].SubItems.Add(Form3.name);
             }
@@ -259,6 +259,40 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
                 listView1.SelectedItems[0].BeginEdit();
             }
             catch { }
+        }
+
+        private void lightThemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lightThemeToolStripMenuItem.Checked == false)
+            {
+                lightThemeToolStripMenuItem.Checked = true;
+                Form2 f = Form2.GetForm;
+                f.BackColor= Color.FromArgb(34, 40, 49);
+                this.BackColor = Color.FromArgb(34, 40, 49);
+                f.label1.ForeColor= Color.FromArgb(238, 238, 238); ;
+                label1.ForeColor= Color.FromArgb(238, 238, 238); ;
+                label2.ForeColor= Color.FromArgb(238, 238, 238); ;
+
+                Form3 f3 = Form3.GetForm;
+                f3.label1.ForeColor = Color.FromArgb(238, 238, 238);
+                f3.label2.ForeColor = Color.FromArgb(238, 238, 238);
+
+            }
+            else {
+                lightThemeToolStripMenuItem.Checked = false;
+                this.BackColor= Color.FromArgb(238, 238, 238); ; ;
+                Form2 f = Form2.GetForm;
+                f.BackColor = Color.FromArgb(238, 238, 238); ;
+                f.label1.ForeColor = Color.Black;
+                label1.ForeColor= Color.Black;
+                label2.ForeColor= Color.Black;
+                
+                Form3 f3 = Form3.GetForm;
+                f3.BackColor = Color.FromArgb(238, 238, 238);
+                f3.label1.ForeColor = Color.Black;
+                f3.label2.ForeColor = Color.Black;
+
+            }
         }
     }
     }

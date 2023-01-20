@@ -34,6 +34,7 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
         private void button1_Click(object sender, EventArgs e)
         {
             inst.LibName= textBox1.Text;
+            textBox1.Clear();
             this.Close();
         }
 

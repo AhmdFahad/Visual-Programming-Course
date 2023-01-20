@@ -16,13 +16,23 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
         {
             InitializeComponent();
         }
+        private static Form3 inst;
+        public static Form3 GetForm
+        {
+            get
+            {
+                if (inst == null || inst.IsDisposed)
+                    inst = new Form3();
+                return inst;
+            }
+        }
+
         public static string name;
         public static int num;
         private void Form3_Load(object sender, EventArgs e)
         {
             for(int i = 0; i < Form1.numberLibrary; i++)
                 listBox1.Items.Add(Form1.arr[i]);
-
 
 
         }
@@ -36,6 +46,7 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
         {
             name = textBox1.Text;
             num = listBox1.SelectedIndex;
+            textBox1.Clear();
             Close();
         }
 
