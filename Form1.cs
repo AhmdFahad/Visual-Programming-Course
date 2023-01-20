@@ -243,6 +243,23 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
         {
             panel1.Hide();
         }
+
+        private void listView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F2 && listView1.SelectedItems.Count > 0)
+            {
+                listView1.SelectedItems[0].BeginEdit();
+            }
+        }
+
+        private void renameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                listView1.SelectedItems[0].BeginEdit();
+            }
+            catch { }
+        }
     }
     }
 
