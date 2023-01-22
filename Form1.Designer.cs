@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "MainLibrary",
             "Book0",
             "Book1"}, -1);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.projectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newLibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.lightThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -97,10 +97,19 @@
             this.projectToolStripMenuItem1.Size = new System.Drawing.Size(96, 20);
             this.projectToolStripMenuItem1.Text = "Application";
             // 
+            // lightThemeToolStripMenuItem
+            // 
+            this.lightThemeToolStripMenuItem.Checked = true;
+            this.lightThemeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.lightThemeToolStripMenuItem.Name = "lightThemeToolStripMenuItem";
+            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.lightThemeToolStripMenuItem.Text = "Dark Theme";
+            this.lightThemeToolStripMenuItem.Click += new System.EventHandler(this.lightThemeToolStripMenuItem_Click);
+            // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -162,7 +171,7 @@
             this.listView1.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.listView1.LabelEdit = true;
             this.listView1.Location = new System.Drawing.Point(52, 88);
             this.listView1.Name = "listView1";
@@ -176,7 +185,7 @@
             // 
             // Library
             // 
-            this.Library.Text = "Books";
+            this.Library.Text = "Library";
             this.Library.Width = 127;
             // 
             // Books
@@ -200,9 +209,9 @@
             // 
             // imageList1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "book-stack.png");
             // 
             // label1
             // 
@@ -272,7 +281,6 @@
             // 
             // toolStripTextBox1
             // 
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
             this.toolStripTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripTextBox1_KeyDown);
@@ -334,15 +342,6 @@
             this.button1.Text = "Delete Book";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // lightThemeToolStripMenuItem
-            // 
-            this.lightThemeToolStripMenuItem.Checked = true;
-            this.lightThemeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.lightThemeToolStripMenuItem.Name = "lightThemeToolStripMenuItem";
-            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lightThemeToolStripMenuItem.Text = "Dark Theme";
-            this.lightThemeToolStripMenuItem.Click += new System.EventHandler(this.lightThemeToolStripMenuItem_Click);
             // 
             // Form1
             // 
