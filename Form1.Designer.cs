@@ -102,14 +102,14 @@
             this.lightThemeToolStripMenuItem.Checked = true;
             this.lightThemeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.lightThemeToolStripMenuItem.Name = "lightThemeToolStripMenuItem";
-            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lightThemeToolStripMenuItem.Text = "Dark Theme";
             this.lightThemeToolStripMenuItem.Click += new System.EventHandler(this.lightThemeToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -158,7 +158,7 @@
             // addBookToolStripMenuItem1
             // 
             this.addBookToolStripMenuItem1.Name = "addBookToolStripMenuItem1";
-            this.addBookToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.addBookToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.addBookToolStripMenuItem1.Text = "Add book";
             this.addBookToolStripMenuItem1.Click += new System.EventHandler(this.addBookToolStripMenuItem1_Click);
             // 
@@ -281,6 +281,7 @@
             // 
             // toolStripTextBox1
             // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
             this.toolStripTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripTextBox1_KeyDown);

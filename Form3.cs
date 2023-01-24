@@ -31,10 +31,9 @@ namespace Ahemd_Fahad_Aub_hamdaha_Project
         public static int num;
         private void Form3_Load(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             for(int i = 0; i < Form1.numberLibrary; i++)
                 listBox1.Items.Add(Form1.arr[i]);
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
